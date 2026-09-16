@@ -1,53 +1,35 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #406fac;
+}
+</style>
+</head>
 <body>
 
-<h1>Wonder Lyrics</h1>
+<h1 style="color:rgb(71, 158, 100);">資三乙 33050227 陳擷熹</h1>
 
-<img src="unnamed.png" alt="W3Schools.com" width="230" height="235">
 
-<p>Here is a song from Shawn Mendes - Wonder :</p>
-
-<pre>
-    I wonder if I'm being real
-    Do I speak my truth or do I filter how I feel?
-    I wonder, wouldn't it be nice
-    To live inside a world that isn't black and white?
-    I wonder what it's like to be my friends
-    Hope that they don't think I'll forget about them
-    I wonder
-    I wonder
-    Right before I close my eyes
-    The only thing that's on my mind
-    Been dreamin' that you feel it too
-    I wonder what it's like to be loved by you
-    Yeah
-    I wonder what it's like
-    I wonder what it's like to be loved by
-    I wonder why I'm so afraid
-    Of saying something wrong, I never said I was a saint
-    I wonder, when I cry into my hands
-    I'm conditioned to feel like it makes me less of a man
-    And I wonder if someday you'll be by my side
-    And tell me that the world will end up alright
-    I wonder
-    I wonder
-    Right before I close my eyes
-    The only thing that's on my mind
-    Been dreamin' that you feel it too
-    I wonder what it's like to be loved by you
-    Yeah
-    I wonder what it's like
-    I wonder what it's like to be loved by you
-    I wonder what it's like to be loved by you
-    Yeah
-    I wonder what it's like to be loved by you
-    I wonder what it's like to be loved by
-    Right before I close my eyes
-    The only thing that's on my mind
-    Been dreamin' that you feel it too
-    I wonder what it's like to be loved by you
-</pre>
+<table style="width:100%">
+<script>
+    document.write("<table align='center'>");
+    for (let i = 0; i <= 9; i++) {
+        document.write("<tr>");
+        for (let j = 0; j <= i ; j++) {
+            document.write("<td>");
+            document.write(i + " * " + j + " = " + (i * j) + "&nbsp;&nbsp;&nbsp;");
+            document.write("</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
 
 </body>
 </html>
