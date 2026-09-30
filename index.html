@@ -1,35 +1,50 @@
-<!DOCTYPE html>
-<html>
 <head>
 <style>
-table, th, td {
-  border: 1px solid white;
-  border-collapse: collapse;
+.all-browsers {
+  margin: 0;
+  padding: 5px;
+  background-color: rgb(167, 170, 167);
+
 }
-th, td {
-  background-color: #406fac;
+
+.all-browsers > h1, .browser {
+  margin: 10px;
+  padding: 5px;
+    text-align: center;
+}
+
+.browser {
+  background: rgb(35, 91, 173);
+}
+
+.browser > h2, p {
+  margin:10px;
+  font-size: 80%;
 }
 </style>
 </head>
+
 <body>
-
-<h1 style="color:rgb(71, 158, 100);">資三乙 33050227 陳擷熹</h1>
-
-
-<table style="width:100%">
-<script>
-    document.write("<table align='center'>");
-    for (let i = 0; i <= 9; i++) {
-        document.write("<tr>");
-        for (let j = 0; j <= i ; j++) {
-            document.write("<td>");
-            document.write(i + " * " + j + " = " + (i * j) + "&nbsp;&nbsp;&nbsp;");
-            document.write("</td>");
-        }
-        document.write("</tr>");
-    }
-    document.write("</table>");
-</script>
+<article class="all-browsers">
+  <h1> 資訊三乙陳擷熹作品集</h1>
+  <article class="browser">
+    <!-- 導覽列區塊 -->
+    <nav>
+        <a href="index.html" class="home-btn">HOME 首頁</a>
+        <a href="https://ccc710330.github.io/web/web0923/">作品一</a>
+        <a href="https://ccc710330.github.io/web/">作品二</a>
+        <a href="https://ccc710330.github.io/web/web0923/">作品三</a>
+    </nav>
+  </article>
+  <article class="browser">
+    <!-- 主內容區塊 -->
+        <h1>歡迎來到資訊三乙陳擷熹的作品集</h1>
+        <p>請點擊上方導覽列瀏覽我的作品。</p>
+                <h1>歡迎來到我的作品集</h1>
+        <p>請點擊上方導覽列瀏覽我的作品。</p>
+                <h1>歡迎來到我的作品集</h1>
+        <p>請點擊上方導覽列瀏覽我的作品。</p>
+  </article>
+</article>
 
 </body>
-</html>
