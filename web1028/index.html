@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>10/28 作業7：設計燈泡互動遊戲</title>
+</head>
+<body>
+
+<!-- 班級、姓名、學號 -->
+<h1>資三乙 陳擷熹 33050227</h1>
+<p>除了支援開關及閃爍模式，還可以利用鼠標碰到燈泡開燈及關燈</p>
+
+<!-- JavaScript 程式碼 -->
+<script>
+var timer = null; // 用來儲存閃爍計時器
+
+// 一般開關燈函式
+function light(sw) {
+  // 如果手動按開關，先停止閃爍，避免衝突
+  stopDisco();
+
+  var pic;
+  var text;
+  
+  if (sw == 0) {
+    pic = "pic_bulboff.gif";
+    text = "目前狀態：燈泡關閉中 ";
+  } else {
+    pic = "pic_bulbon.gif";
+    text = "目前狀態：燈泡亮起中 ";
+  }
+  
+  document.getElementById('myImage').src = pic;
+  document.getElementById('statusText').innerHTML = text;
+}
+
+// 閃爍模式函式 (Disco)
+function startDisco() {
+  // 如果已經在閃爍了，就不重複執行
+  if (timer != null) return;
+
+  var state = false;
+  document.getElementById('statusText').innerHTML = "目前狀態：燈泡閃爍中 ";
+
+  // 每隔 0.1秒 (100毫秒) 自動切換一次燈泡圖片
+  timer = setInterval(function() {
+    state = !state; // 切換布林值 (true / false)
+    if (state) {
+      document.getElementById('myImage').src = "pic_bulbon.gif";
+    } else {
+      document.getElementById('myImage').src = "pic_bulboff.gif";
+    }
+  }, 100);
+}
+
+// 停止閃爍函式
+function stopDisco() {
+  if (timer != null) {
+    clearInterval(timer); // 清除計時器
+    timer = null;
+  }
+}
+</script>
+
+<!-- 燈泡圖片：加入滑鼠移入移出互動 -->
+<img id="myImage" src="pic_bulboff.gif" width="100" height="180" 
+     onmouseover="light(1)" onmouseout="light(0)">
+
+<!-- 狀態提示文字 -->
+<p id="statusText">目前狀態：燈泡停止閃爍 </p>
+
+<!-- 控制按鈕群組 -->
+<p>
+<button type="button" onclick="light(1)">Light On</button>
+<button type="button" onclick="light(0)">Light Off</button>
+<button type="button" onclick="startDisco()">Disco Mode</button>
+<button type="button" onclick="stopDisco(); light(0);">Stop Disco</button>
+</p>
+
+</body>
+</html>
